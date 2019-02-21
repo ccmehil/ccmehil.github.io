@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>ccmehil - just me</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" >
+    <!-- Fonts -->
+    <link rel="stylesheet" type="text/css" href="assets/fonts/font-awesome.min.css">
+    <!-- Icon -->
+    <link rel="stylesheet" type="text/css" href="assets/fonts/simple-line-icons.css">
+    <!-- Slicknav -->
+    <link rel="stylesheet" type="text/css" href="assets/css/slicknav.css">
+    <!-- Nivo Lightbox -->
+    <link rel="stylesheet" type="text/css" href="assets/css/nivo-lightbox.css" >
+    <!-- Animate -->
+    <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
+    <!-- Main Style -->
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    <!-- Responsive Style -->
+    <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
+
+  </head>
+  <body>
+
+<!-- Header Area wrapper Starts -->
+<header id="header-wrap">
+        <!-- Navbar Start -->
+        <nav class="navbar navbar-expand-lg fixed-top scrolling-navbar indigo">
+          <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                <span class="icon-menu"></span>
+                <span class="icon-menu"></span>
+                <span class="icon-menu"></span>
+              </button>
+              <a href="index.html" class="navbar-brand"><img src="assets/img/logo.png" alt=""></a>
+            </div>
+            <div class="collapse navbar-collapse" id="main-navbar">
+              <ul class="onepage-nev navbar-nav mr-auto w-100 justify-content-end clearfix">
+                <li class="nav-item active">
+                  <a class="nav-link" href="index.html">
+                    Home
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html#about">
+                    About
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html#stuff">
+                    Stuff
+                  </a>
+                </li>    
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html#services">
+                    Tasks
+                  </a>
+                </li> 
+              </ul>
+            </div>
+          </div>
+  
+          <!-- Mobile Menu Start -->
+          <ul class="onepage-nev mobile-menu">
+            <li>
+              <a href="index.html#home">Home</a>
+            </li>
+            <li>
+              <a href="index.html#about">About</a>
+            </li>
+            <li>
+              <a href="index.html#stuff">Stuff</a>
+            </li>
+            <li>
+              <a href="index.html#services">Tasks</a>
+            </li>
+          </ul>
+          <!-- Mobile Menu End -->
+        </nav>
+        <!-- Navbar End -->
+  
+      </header>
+      <!-- Header Area wrapper End -->
+
+
+
+    <h2>Node JS Script</h2>
+
+    <div id="portfolio" class="row" data-wow-delay="0.4s">
+        <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix design">
+                <div class="portfolio-item">
+                  <div class="shot-item">
+                    <img src="assets/img/gallery/img-7.jpg" alt="" /> 
+                    <div class="overlay">
+                      <div class="icons">
+                        <a class="lightbox preview" href="assets/img/gallery/img-7.jpg">
+                          <i class="icon-eye"></i>
+                        </a>
+                        <a class="link" href="https://www.icloud.com/shortcuts/a4a7ae78ea2b4b0b83f25a6c8109fb9e">
+                          <i class="icon-link"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>               
+                </div>
+              </div>            
+        </div>
+        <div id="7shortcut">
+            <pre>
+                const args = process.argv.slice(2)
+                var net = require('net');
+                var Promise = require('bluebird');
+                
+                function checkSite(hostname, port, timeout) {
+                    return new Promise(function(resolve, reject) {
+                        timeout = timeout || 5000;     // default of 5 seconds
+                        var timer = setTimeout(function() {
+                            reject("timeout");
+                            socket.end();
+                        }, timeout);
+                        var socket = net.createConnection(port, hostname, function() {
+                            clearTimeout(timer);
+                            resolve();
+                            socket.end();
+                        });
+                        socket.on('error', function(err) {
+                            clearTimeout(timer);
+                            reject(err);
+                        });
+                    });
+                }
+                
+                checkSite(args[0], 80).then(function() {
+                    console.log('was successful');
+                }, function(err) {
+                    console.log('failed');
+                })
+            </pre>
+        </div>         
+    </div>
+
+    <!-- Footer Section Start -->
+    <footer class="footer-area section-padding">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="footer-text text-center wow fadeInDown" data-wow-delay="0.3s">
+                    <ul class="social-icon">
+                      <li>
+                          <a class="facebook" href="http://www.facebook.com/ccmehil"><i class="icon-social-facebook"></i></a>
+                        </li>
+                        <li>
+                          <a class="twitter" href="https://www.twitter.com/ccmehil"><i class="icon-social-twitter"></i></a>
+                        </li>
+                        <li>
+                          <a class="instagram" href="https://instagram.com/ccmehil"><i class="icon-social-instagram"></i></a>
+                        </li>
+                        <li>
+                          <a class="linkedin" href="http://www.linkedin.com/in/ccmehil"><i class="icon-social-linkedin"></i></a>
+                        </li>
+                        <li>
+                          <a class="youtube" href="http://www.youtube.com/user/ccmehil"><i class="icon-social-youtube"></i></a>
+                        </li>
+                    </ul>
+                    <p>Copyright © 2018 UIdeck All Right Reserved</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </footer>
+          <!-- Footer Section End -->
+      
+          <!-- Go to Top Link -->
+          <a href="#" class="back-to-top">
+            <i class="icon-arrow-up"></i>
+          </a>
+
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="assets/js/jquery-min.js"></script>
+      <script src="assets/js/popper.min.js"></script>
+      <script src="assets/js/bootstrap.min.js"></script>
+      <script src="assets/js/jquery.mixitup.js"></script>
+      <script src="assets/js/jquery.counterup.min.js"></script>
+      <script src="assets/js/waypoints.min.js"></script>
+      <script src="assets/js/wow.js"></script>
+      <script src="assets/js/jquery.nav.js"></script>
+      <script src="assets/js/jquery.easing.min.js"></script>  
+      <script src="assets/js/nivo-lightbox.js"></script>
+      <script src="assets/js/jquery.slicknav.js"></script>
+      <script src="assets/js/main.js"></script>
+        
+    </body>
+  </html>
