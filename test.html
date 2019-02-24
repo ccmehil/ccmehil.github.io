@@ -53,9 +53,9 @@
             complete : function(){
             },
             success: function(json){
-              var myObj = $.parseJSON(json);
-              console.log(myObj);
               console.log(json);
+              var returnedData = JSON.parse(json);
+              console.log(returnedData)
             }
         });
 
