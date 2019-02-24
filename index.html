@@ -389,7 +389,7 @@
           <div class="col-md-3 col-sm-6 work-counter-widget text-center">
             <div class="counter wow fadeInDown" data-wow-delay="0.3s">
               <div class="icon"><i class="icon-social-youtube"></i></div>
-              <div class="counterUp"><div id="myuploads"></div> - 41</div>
+              <div class="counterUp"><div id="myuploads"></div></div>
               <p>Public Videos</p>
             </div>
           </div>
@@ -457,7 +457,17 @@
     <script src="assets/js/main.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
-
+    <script>
+      $.ajax({
+        url: 'https://www.googleapis.com/youtube/v3/search?part=id&channelId=UCsFa5KWvW2J6WttDBNRl8-g&maxResults=50&order=date&type=video&key=AIzaSyDtd46FzXB4XETD7olvILQvWV713QmPOMA',
+        dataType: 'json',
+        complete : function(){
+        },
+        success: function(json){
+          $('#myuploads').append(json.pageInfo.totalResults)
+        }
+      });    
+    </script>
   
   </body>
 </html>
