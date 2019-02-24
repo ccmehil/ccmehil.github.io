@@ -53,14 +53,9 @@
             complete : function(){
             },
             success: function(json){
-              console.log(json);
-              console.log(json.pageInfo.totalResults);
-
+              $('#myuploads').append(json.pageInfo.totalResults)
             }
         });
-
-
-//              $('#myuploads').append(element.name);
 
 
 </script>
