@@ -54,8 +54,8 @@
             },
             success: function(json){
               console.log(json);
-              var returnedData = JSON.parse(json);
-              console.log(returnedData)
+              console.log(json.pageInfo.totalResults);
+
             }
         });
 
