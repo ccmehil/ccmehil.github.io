@@ -393,7 +393,14 @@
               <p>Public Videos</p>
             </div>
           </div>
-          <!-- Counter Item -->
+          <div class="col-md-3 col-sm-6 work-counter-widget text-center">
+              <div class="counter wow fadeInDown" data-wow-delay="0.3s">
+                <div class="icon"><i class="icon-eye"></i></div>
+                <div class="counterUp"><div id="mysubs"></div></div>
+                <p>Public Videos</p>
+              </div>
+            </div>
+            <!-- Counter Item -->
           <div class="col-md-3 col-sm-6 work-counter-widget text-center">
             <div class="counter wow fadeInDown" data-wow-delay="0.6s">
               <iframe width="560" height="315" src="https://www.youtube.com/embed/Dg5K8xpdcx8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>              
@@ -467,6 +474,16 @@
           $('#myuploads').append(json.pageInfo.totalResults)
         }
       });    
+
+      $.ajax({
+        url: 'https://www.googleapis.com/youtube/v3/subscriptions?part=id&mySubscribers=true&key=AIzaSyDtd46FzXB4XETD7olvILQvWV713QmPOMA',
+        dataType: 'json',
+        complete : function(){
+        },
+        success: function(json){
+          $('#mysubs').append(json.pageInfo.totalResults)
+        }
+      }); 
     </script>
   
   </body>
