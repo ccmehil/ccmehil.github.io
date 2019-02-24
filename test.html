@@ -45,12 +45,15 @@
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   
       <script>
+        console.log("here")
         $.getJSON('https://www.googleapis.com/youtube/v3/search?part=id&channelId=UCsFa5KWvW2J6WttDBNRl8-g&maxResults=50&order=date&type=video&key=AIzaSyDtd46FzXB4XETD7olvILQvWV713QmPOMA', { get_param: 'pageInfo.totalResults' }, function(data) {
           $.each(data, function(index, element) {
               $('#myuploads').append(element.name);
           });
         });      
-      </script>
+        console.log("here")
+
+</script>
 
 </body>
 </html>
