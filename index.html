@@ -406,7 +406,7 @@
               <div class="counter wow fadeInDown" data-wow-delay="0.3s">
                 <div class="icon"><i class="icon-eye"></i></div>
                 <div class="counterUp"><div id="mysubs"></div></div>
-                <p>Total Subscribers ~ API says one thing, website the other!</p>
+                <p>Total Subscribers</p>
               </div>
             </div>
             <!-- Counter Item -->
@@ -485,12 +485,12 @@
       });    
 
       $.ajax({
-        url: 'https://www.googleapis.com/youtube/v3/subscriptions?part=id&channelId=UCsFa5KWvW2J6WttDBNRl8-g&key=AIzaSyDtd46FzXB4XETD7olvILQvWV713QmPOMA',
+        url: 'https://www.googleapis.com/youtube/v3/channels?part=statistics,snippet&id=UCsFa5KWvW2J6WttDBNRl8-g&key=AIzaSyDtd46FzXB4XETD7olvILQvWV713QmPOMA',
         dataType: 'json',
         complete : function(){
         },
         success: function(json){
-          $('#mysubs').append(json.pageInfo.totalResults)
+          $('#mysubs').append(json.items.statistics.subscriberCount)
         }
       }); 
     </script>
