@@ -48,14 +48,17 @@
         console.log("here")
 
         $.ajax({
-            url: 'https://www.googleapis.com/youtube/v3/search?part=id&channelId=UCsFa5KWvW2J6WttDBNRl8-g&maxResults=50&order=date&type=video&key=AIzaSyDtd46FzXB4XETD7olvILQvWV713QmPOMA',
-            dataType: 'json',
-            complete : function(){
-            },
-            success: function(json){
-              $('#myuploads').append(json.pageInfo.totalResults)
-            }
-        });
+        url: 'https://www.googleapis.com/youtube/v3/channels?part=statistics,snippet&id=UCsFa5KWvW2J6WttDBNRl8-g&key=AIzaSyDtd46FzXB4XETD7olvILQvWV713QmPOMA',
+        dataType: 'json',
+        complete : function(){
+        },
+        success: function(json){
+          console.log("json")
+          
+        }
+      }); 
+
+
 
 
 </script>
