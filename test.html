@@ -53,7 +53,7 @@
         complete : function(){
         },
         success: function(json){
-          console.log(json.items.statistics.subscriberCount)
+          console.log(json.items[0].statistics.subscriberCount)
           
         }
       }); 
