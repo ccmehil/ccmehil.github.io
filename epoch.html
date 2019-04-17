@@ -16,10 +16,10 @@
         }
 
         var utcSeconds = getParams("msecs");
-        console.log(utcSeconds);
-        var d = new Date(0); 
-        d.setUTCSeconds(utcSeconds);
-        document.write(d.toDateString("MM/dd/yyyy"));
+        console.log(utcSeconds)
+        var milisegundos = parseInt(utcSeconds.replace("/Date(", "").replace(")/", ""));
+        var newDate = new Date(milisegundos).toLocaleDateString("en-UE");
+        document.write(newDate)
     </script>
 
 </body>
