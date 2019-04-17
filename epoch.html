@@ -16,9 +16,10 @@
         }
 
         var utcSeconds = getParams("msecs");
+        console.log(utcSeconds);
         var d = new Date(0); 
         d.setUTCSeconds(utcSeconds);
-        document.write(d.toDateString());
+        document.write(d.toDateString("MM/dd/yyyy"));
     </script>
 
 </body>
