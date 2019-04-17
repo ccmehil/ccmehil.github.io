@@ -1,0 +1,24 @@
+<html>
+<head>
+    <title>msecs to date</title>
+</head>
+<body>
+
+    <script>
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+
+        var utcSeconds = getUrlVars()["msecs"];
+        var d = new Date(0); 
+        d.setUTCSeconds(utcSeconds);
+        document.write(d.toDateString());
+    </script>
+
+</body>
+</html>
+
