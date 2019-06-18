@@ -52,6 +52,7 @@
         },
         success: function(json){
           console.log(json)
+          var videoList = ''
           for (i = 0; i < json.items.length; i++) { 
             videoList += json.items[i].id + ','
           }
