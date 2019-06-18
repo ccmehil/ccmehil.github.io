@@ -45,8 +45,6 @@
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   
       <script>
-        console.log("here")
-
         $.ajax({
         url: 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&maxResults=50&playlistId=PL7_D98_2C0Lf4vpRiEJQU3CY_dlTV_-C1&key=AIzaSyB4Jt45g50eUJCg8iStkv26HIY2JOrbbBY',
         dataType: 'json',
@@ -54,13 +52,12 @@
         },
         success: function(json){
           console.log(json)
-          
-          
+          for (i = 0; i < json.items.length; i++) { 
+            videoList += json.items[i].id + ','
+          }
+          console.log(videoList)
         }
       }); 
-
-
-
 
 </script>
 
