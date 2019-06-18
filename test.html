@@ -46,21 +46,33 @@
   
       <script>
         $.ajax({
-        url: 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&maxResults=50&playlistId=PL7_D98_2C0Lf4vpRiEJQU3CY_dlTV_-C1&key=AIzaSyB4Jt45g50eUJCg8iStkv26HIY2JOrbbBY',
-        dataType: 'json',
-        complete : function(){
-        },
-        success: function(json){
-          console.log(json)
-          var videoList = ''
-          for (i = 0; i < json.items.length; i++) { 
-            videoList += json.items[i].id + ','
-          }
-          console.log(videoList)
-        }
-      }); 
+          url: 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&maxResults=50&playlistId=PL7_D98_2C0Lf4vpRiEJQU3CY_dlTV_-C1&key=AIzaSyB4Jt45g50eUJCg8iStkv26HIY2JOrbbBY',
+          dataType: 'json',
+          complete : function(){
+          },
+          success: function(json){
+            console.log(json)
+            var videoList = ''
+            for (i = 0; i < json.items.length; i++) { 
+              videoList += json.items[i].id + ','
+            }
+            console.log(videoList)
+            $.ajax({
+              url: 'https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics&id='+videoList+'&key=AIzaSyB4Jt45g50eUJCg8iStkv26HIY2JOrbbBY',
+              dataType: 'json',
+              complete : function(){
+              },
+              success: function(json){
+                console.log(json)
 
-</script>
+
+                
+              }
+            }); 
+          }
+        }); 
+
+      </script>
 
 </body>
 </html>
