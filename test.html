@@ -26,6 +26,11 @@
   </head>
   <body>
 
+      <form name="playlistform">
+        <input type="text" value="PL7_D98_2C0Lf4vpRiEJQU3CY_dlTV_-C1" id="playlistId">
+        <input type="submit">
+      </form>
+    
       <div id="myuploads">  </div>
 
       <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -44,38 +49,45 @@
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   
       <script>
-        var html = ''
-        $.ajax({
-          url: 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&maxResults=50&playlistId=PL7_D98_2C0Lf4vpRiEJQU3CY_dlTV_-C1&key=AIzaSyB4Jt45g50eUJCg8iStkv26HIY2JOrbbBY',
-          dataType: 'json',
-          complete : function(){
-          },
-          success: function(json){
-            //console.log(json)
-            var videoList = ''
-            for (i = 0; i < json.items.length; i++) { 
-              videoList += json.items[i].contentDetails.videoId + ','
-            }
-            //console.log(videoList)
-            $.ajax({
-              url: 'https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics&id='+videoList+'&key=AIzaSyB4Jt45g50eUJCg8iStkv26HIY2JOrbbBY',
-              dataType: 'json',
-              complete : function(){
-              },
-              success: function(json){
-                //console.log(json)
-                var videoCounts = 0
-                for (i = 0; i < json.items.length; i++) { 
-                  videoCounts = videoCounts + parseInt(json.items[i].statistics.viewCount)
-                  html += '<tr><td><font color=\'red\'>' + json.items[i].snippet.title + '</td><td>' + json.items[i].statistics.viewCount + '</td></tr>'
-                }
-                html += '<tr><td></td><td>Total Views:' + videoCounts + '</td></tr>'
-                html = '<table>' + html + '</table>'
-                document.getElementById("myuploads").innerHTML = html;
+
+        document.getElementById("playlistform").onsubmit = function() {
+          getVideoList(document.getElementById("playlistId").value);
+        }
+        
+        function getVideoList(playlistId){
+          var html = ''
+          $.ajax({
+            url: 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&maxResults=50&playlistId='+playlistId+'&key=AIzaSyB4Jt45g50eUJCg8iStkv26HIY2JOrbbBY',
+            dataType: 'json',
+            complete : function(){
+            },
+            success: function(json){
+              //console.log(json)
+              var videoList = ''
+              for (i = 0; i < json.items.length; i++) { 
+                videoList += json.items[i].contentDetails.videoId + ','
               }
-            }); 
-          }
-        }); 
+              //console.log(videoList)
+              $.ajax({
+                url: 'https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics&id='+videoList+'&key=AIzaSyB4Jt45g50eUJCg8iStkv26HIY2JOrbbBY',
+                dataType: 'json',
+                complete : function(){
+                },
+                success: function(json){
+                  //console.log(json)
+                  var videoCounts = 0
+                  for (i = 0; i < json.items.length; i++) { 
+                    videoCounts = videoCounts + parseInt(json.items[i].statistics.viewCount)
+                    html += '<tr><td><font color=\'red\'>' + json.items[i].snippet.title + '</td><td>' + json.items[i].statistics.viewCount + '</td></tr>'
+                  }
+                  html += '<tr><td></td><td>Total Views:' + videoCounts + '</td></tr>'
+                  html = '<table>' + html + '</table>'
+                  document.getElementById("myuploads").innerHTML = html;
+                }
+              }); 
+            }
+          }); 
+        }
 
       </script>
 
