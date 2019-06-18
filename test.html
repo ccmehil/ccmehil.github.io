@@ -68,7 +68,8 @@
                 for (i = 0; i < json.items.length; i++) { 
                   videoCounts = videoCounts + parseInt(json.items[i].statistics.viewCount)
                 }
-                console.log(videoCounts)
+                console.log('Total Views:' + videoCounts)
+                console.log(json.items[i].snippet.title + ' ' + json.items[i].statistics.viewCount)
                 
               }
             }); 
