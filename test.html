@@ -28,7 +28,7 @@
 
       <form id="playlistform">
         <input type="text" value="PL7_D98_2C0Lf4vpRiEJQU3CY_dlTV_-C1" id="playlistId" size="55">
-        <input type="submit" value="Get View Counts">
+        <input type="button" value="Get View Counts">
       </form>
     
       <div id="myuploads">  </div>
@@ -50,7 +50,8 @@
   
       <script>
 
-        document.getElementById("playlistform").onsubmit = function() {
+        document.getElementById("playlistform").onclick = function() {
+          document.getElementById("myuploads").innerHTML = '';
           getVideoList(document.getElementById("playlistId").value);
         }
         
