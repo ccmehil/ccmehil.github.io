@@ -64,9 +64,9 @@
               },
               success: function(json){
                 console.log(json)
-                var videoCounts = ''
+                var videoCounts = 0
                 for (i = 0; i < json.items.length; i++) { 
-                  videoCounts += json.items[i].statistics.viewCount
+                  videoCounts = videoCounts + json.items[i].statistics.viewCount
                 }
                 console.log(videoCounts)
                 
