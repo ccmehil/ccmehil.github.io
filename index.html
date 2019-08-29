@@ -543,6 +543,11 @@
               <p>Followers</p>
             </div>
           </div>
+          <div class="col-md-3 col-sm-6 work-counter-widget text-center">
+            <div class="counter wow fadeInDown" data-wow-delay="0.6s">
+              <a href="" id="instapost"><img src="" id="instapostimg"></a>            
+            </div>
+          </div>
         </div>
 
       </div>
@@ -595,7 +600,7 @@
     <script src="assets/js/waypoints.min.js"></script>
     <script src="assets/js/wow.js"></script>
     <script src="assets/js/jquery.nav.js"></script>
-     
+    <!-- <script src="assets/js/jquery.easing.min.js"></script>  -->
     <script src="assets/js/nivo-lightbox.js"></script>
     <script src="assets/js/jquery.slicknav.js"></script>
     <script src="assets/js/main.js"></script>
@@ -620,6 +625,8 @@
         },
         success: function(json){
           $('#myfollowers').append(json.graphql.user.edge_followed_by.count)
+          $('#instapost').src('https://www.instagram.com/p/' + json.graphql.edge_owner_to_timeline_media.edges.node[0].shortcode)
+          $('#instaposting').src(json.graphql.edge_owner_to_timeline_media.edges.node[0].display_url)
         }
       }); 
 
