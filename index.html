@@ -625,8 +625,8 @@
         },
         success: function(json){
           $('#myfollowers').append(json.graphql.user.edge_followed_by.count)
-          $('#instapost').src('https://www.instagram.com/p/' + json.graphql.user.edge_owner_to_timeline_media.edges.node[0].shortcode)
-          $('#instaposting').src(json.graphql.user.edge_owner_to_timeline_media.edges.node[0].display_url)
+          $('#instapost').src('https://www.instagram.com/p/' + json.graphql.user.edge_owner_to_timeline_media.edges[0].node.shortcode)
+          $('#instaposting').src(json.graphql.user.edge_owner_to_timeline_media.edges[0].node.display_url)
         }
       }); 
 
