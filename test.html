@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  
+  </head>
+  <body>
+
+<script>
+    $.ajax({
+      url: 'https://www.instagram.com/ccmehil/?__a=1',
+      dataType: 'json',
+      complete : function(){
+      },
+      success: function(json){
+        console.log(json.graphql.user.edge_followed_by.count)
+      }
+    }); 
+
+  </script>
+
+</body>
+</html>
