@@ -518,15 +518,15 @@
           <div class="col-md-3 col-sm-6 work-counter-widget text-center">
             <div class="counter wow fadeInDown" data-wow-delay="0.3s">
               <div class="icon"><i class="icon-social-instagram"></i></div>
-              <div class="counterUp"><div id="myfollowers"></div></div>
+              <div class="counterUp"><div id="myinstafollowers"></div></div>
               <p>Followers</p>
             </div>
           </div>
           <div class="col-md-3 col-sm-6 work-counter-widget text-center">
               <div class="counter wow fadeInDown" data-wow-delay="0.3s">
-                <div class="icon"><i class="icon-eye"></i></div>
+                <div class="icon"><i class="icon-social-youtube"></i></div>
                 <div class="counterUp"><div id="mysubs"></div></div>
-                <p>Total Subscribers</p>
+                <p>Subscribers</p>
               </div>
           </div>
           <div class="col-md-3 col-sm-6 work-counter-widget text-center">
@@ -609,7 +609,7 @@
         complete : function(){
         },
         success: function(json){
-          $('#myfollowers').append(json.graphql.user.edge_followed_by.count)
+          $('#myinstafollowers').append(json.graphql.user.edge_followed_by.count)
         }
       }); 
 
