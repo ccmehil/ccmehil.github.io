@@ -6,88 +6,206 @@
     <meta http-equiv="Cache-control" content="public">   
     <title>ccmehil - just me</title>
     <style>
-        .layout {
-            width: 1366px;
-            height: 768px;
-            display: grid;
-            grid:
-                "header" auto
-                "main" 1fr
-                "footer" auto
-                / 1fr;
-            gap: 8px;
-        }
-        .header { 
-            grid-area: header; 
-            border: 8px double #4E1D91;
-            border-radius: 10px;
-            text-align: center;
-            vertical-align: middle;
-        }
-        #headerFont {
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 25px;
-            letter-spacing: 2px;
-            word-spacing: 2px;
-            color: #4E1D91;
-            font-weight: bold;
-            text-decoration: none;
-            font-style: normal;
-            font-variant: small-caps;
-            text-transform: none;
-        }        
-        .main { grid-area: main; }
-        .footer { grid-area: footer; }
-        .container {  display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
-        gap: 0px 0px;
-        grid-auto-flow: row;
-        grid-template-areas:
-            "ShortCut1 ShortCut2 ShortCut3"
-            "ShortCut4 ShortCut5 ShortCut6"
-            "ShortCut7 ShortCut8 ShortCut9";
+        /* Typography imported from Google Fonts */
+        @import url('https://fonts.googleapis.com/css?family=Playfair+Display|Source+Sans+Pro:200,400');
+
+        h1, h2, h3, h4, h5, h6 {
+        font-family: 'Playfair Display', serif;
         }
 
-        .ShortCut1 { grid-area: ShortCut1; }
+        p, a {
+        font-family: 'Source Sans Pro', sans-serif;
+        }
 
-        .ShortCut2 { grid-area: ShortCut2; }
+        /* Generic styles */
+        html {
+        scroll-behavior: smooth;
+        }
 
-        .ShortCut3 { grid-area: ShortCut3; }
+        a {
+        background-color: goldenrod;
+        text-decoration: none;
+        color: white;
+        border-radius: .25rem;
+        text-align: center;
+        display: inline-block;
+        transition: all .3s;
+        }
 
-        .ShortCut4 { grid-area: ShortCut4; }
+        a:hover {
+        opacity: .6;
+        }
 
-        .ShortCut5 { grid-area: ShortCut5; }
+        /* Styles for the hero image */
+        .hero {
+        /* Photo by mnm.all on Unsplash */
+        background: url('https://images.unsplash.com/photo-1518176258769-f227c798150e') center;
+        background-size: cover;
+        padding: 4rem 2rem;
+        /* grid styles */
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        align-items: center;
+        }
 
-        .ShortCut6 { grid-area: ShortCut6; }
+        .hero > * {
+        color: white;
+        }
 
-        .ShortCut7 { grid-area: ShortCut7; }
+        .hero > h1 {
+        font-size: 4rem;
+        padding-bottom: 1rem;
+        }
 
-        .ShortCut8 { grid-area: ShortCut8; }
+        .hero > article > p {
+        font-size: 1.5rem;
+        font-weight: 200;
+        }
 
-        .ShortCut9 { grid-area: ShortCut9; }
+        .hero > article > a {
+        padding: 1rem;
+        margin-top: .75rem;
+        }
+
+        /* shortcuts styles */
+        .shortcuts {
+        padding: 2rem;
+        }
+
+        .shortcuts > ul {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        grid-gap: 1rem;
+        }
+
+        .shortcuts > ul > li {
+        border: 1px solid #E2E2E2;
+        border-radius: .5rem;
+        }
+
+        .shortcuts > ul > li > figure {
+        max-height: 220px;
+        overflow: hidden;
+        border-top-left-radius: .5rem;
+        border-top-right-radius: .5rem;
+        position: relative;
+        }
+
+        .shortcuts > ul > li > figure > img {
+        width: 100%;
+        }
+
+        .shortcuts > ul > li > figure > figcaption {
+        position: absolute;
+        bottom: 0;
+        background-color: rgba(0,0,0,.7);
+        width: 100%;
+        }
+
+        .shortcuts > ul > li > figure > figcaption > h3 {
+        color: white;
+        padding: .75rem;
+        font-size: 1.25rem;
+        }
+
+        .shortcuts > ul > li > p {
+        font-size: 1rem;
+        line-height: 1.5;
+        padding: 1rem .75rem;
+        color: #666666;
+        }
+
+        .shortcuts > ul > li > a {
+        padding: .5rem 1rem;
+        margin: .5rem;
+        }
+
+        /* footer */
+        footer {
+        background-color: #333;
+        padding: .75rem;
+        color: white;
+        text-align: center;
+        font-size: .75rem;
+        }
     </style>
 </head>
 <body>
 
-    <section class="layout">
-        <div class="header" id="headerFont">Apple Shortcut Gallery</div>
-        <div class="main">
-            <div class="container">
-                <div class="ShortCut1"><a href="https://www.icloud.com/shortcuts/ed028cda2d9a4ac7bae7fb1ce3483de3"><img src="assets/img/img-8.jpeg" alt="" width="80%"/> </a></div>
-                <div class="ShortCut2"><a href="https://www.icloud.com/shortcuts/b422f45944e042689e228dc8a983842a"><img src="assets/img/img-4.jpeg" alt=""  width="80%"/></a></div>
-                <div class="ShortCut3"><a href="https://www.icloud.com/shortcuts/52d24139da604d50ae98bc95b30d02dd"><img src="assets/img/img-6.jpeg" alt=""  width="80%"/></a></div>
-                <div class="ShortCut4"><a href="https://www.icloud.com/shortcuts/35e15d03d7174f07a9a2e224802a42cd"><img src="assets/img/img-5.jpeg" alt=""  width="80%"/></a></div>
-                <div class="ShortCut5"><a href="https://www.icloud.com/shortcuts/d7707c1ed9d54969bbcec424e1f678bb"><img src="assets/img/img-9.jpeg" alt=""  width="80%"/></a></div>
-                <div class="ShortCut6"><a href="https://www.icloud.com/shortcuts/1f21e3c0856e48bfa2c098eaf8e715fa"><img src="assets/img/img-16.jpeg" alt=""  width="80%"/></a></div>
-                <div class="ShortCut7"></div>
-                <div class="ShortCut8"></div>
-                <div class="ShortCut9"></div>
-            </div>              
-        </div>
-        <div class="footer">3</div>
-    </section>
-
-
+    <main class="wrapper">
+        <section class="hero">
+            <h1>Apple Shortcut Gallery</h1>
+            <article>
+              <p>These are some of the Apple Shortcuts I have created. I also have videos on YouTube and a Skillshare course showing how to make them.</p>
+            </article>
+        </section>
+        <section class="shortcuts" id="shortcuts">
+          <ul>
+            <li>
+              <figure>
+                <img src="assets/img/img-8.jpeg" alt="" width="80%"/>
+                <figcaption><h3>Work on Draft</h3></figcaption>
+              </figure>
+              <p>
+                Use through the Share menu to add markup and annotations to items
+              </p>
+              <a href="https://www.icloud.com/shortcuts/ed028cda2d9a4ac7bae7fb1ce3483de3">Get Shortcut</a>
+            </li>
+            <li>
+                <figure>
+                    <img src="assets/img/img-4.jpeg" alt="" width="80%"/>
+                    <figcaption><h3>Voice Log</h3></figcaption>
+                  </figure>
+                  <p>
+                    Use dictation to create notes associated with individuals for reminders
+                  </p>
+                  <a href="https://www.icloud.com/shortcuts/b422f45944e042689e228dc8a983842a">Get Shortcut</a>
+            </li>
+            <li>
+                <figure>
+                    <img src="assets/img/img-6.jpeg" alt="" width="80%"/>
+                    <figcaption><h3>Log Entries</h3></figcaption>
+                  </figure>
+                  <p>
+                    Quick interface to choose between dictation or written voice logs.
+                  </p>
+                  <a href="https://www.icloud.com/shortcuts/52d24139da604d50ae98bc95b30d02dd">Get Shortcut</a>
+            </li>
+            <li>
+                <figure>
+                    <img src="assets/img/img-5.jpeg" alt="" width="80%"/>
+                    <figcaption><h3>Text Log</h3></figcaption>
+                  </figure>
+                  <p>
+                    written voice log entry for reminders.
+                  </p>
+                  <a href="https://www.icloud.com/shortcuts/35e15d03d7174f07a9a2e224802a42cd">Get Shortcut</a>
+            </li> 
+            <li>
+                <figure>
+                    <img src="assets/img/img-9.jpeg" alt="" width="80%"/>
+                    <figcaption><h3>Subscriber Counter</h3></figcaption>
+                  </figure>
+                  <p>
+                    Easily get your current count of YouTube subscribers.
+                  </p>
+                  <a href="https://www.icloud.com/shortcuts/d7707c1ed9d54969bbcec424e1f678bb">Get Shortcut</a>
+            </li>
+            <li>
+                <figure>
+                    <img src="assets/img/img-16.jpeg" alt="" width="80%"/>
+                    <figcaption><h3>Record and Issue</h3></figcaption>
+                  </figure>
+                  <p>
+                    Record an issue for follow up later.
+                  </p>
+                  <a href="https://www.icloud.com/shortcuts/1f21e3c0856e48bfa2c098eaf8e715fa">Get Shortcut</a>
+            </li>           
+          </ul>
+        </section>
+      </main>
+      <footer>
+        <p>Borrowed with ❤ from <ahref="https://css-tricks.com/look-ma-no-media-queries-responsive-layouts-using-css-grid/">CSS Tricks</a> &copy; 2019. Made with ❤ and CSS Grid.</p>
+      </footer>
 </body>
 </html>
